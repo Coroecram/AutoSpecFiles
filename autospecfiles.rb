@@ -5,5 +5,7 @@ require 'pathname'
 spec_folder = "#{Dir.getwd}/spec"
 
 Pathname.new(Dir.getwd).each_entry do |filename|
-  puts filename
+  if filename.to_s != $0 && filename.to_s =~ /.*\.rb/
+    puts filename
+  end
 end
